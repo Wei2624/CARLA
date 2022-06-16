@@ -86,7 +86,7 @@ def wachter_recourse(
 
         # [0, 1] for class 1, [1, 0] for class 0
         # target is the class probability of class 1
-        target_class = y_target[1]
+        target_class = int(y_target[1])
         loss_fn = torch.nn.BCELoss()
     else:
         raise ValueError(f"loss_type {loss_type} not supported")

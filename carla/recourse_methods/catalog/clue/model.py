@@ -186,6 +186,9 @@ class Clue(RecourseMethod):
             counterfactual = vae_gradient_search(row.values, self._mlmodel, self._vae)
             list_cfs.append(counterfactual)
 
+            import pdb
+            pdb.set_trace()
+
         # Convert output into correct format
         df_cfs = check_counterfactuals(self._mlmodel, list_cfs, factuals.index)
         df_cfs = self._mlmodel.get_ordered_features(df_cfs)
